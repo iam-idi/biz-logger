@@ -1,0 +1,16 @@
+{
+  "name": "bizloger",
+  "version": "1.0.0",
+  "description": "A business payment/invoice logger",
+  "main": "./src",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "author": "idi",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
