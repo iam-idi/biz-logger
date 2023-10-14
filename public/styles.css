@@ -24,10 +24,6 @@ h1{
     font-weight: 900;
 }
 
-ul li p{
-    font-size: 20px;
-    font-weight: 600;
-}
 
 ul{
     width: 80%;
@@ -51,7 +47,9 @@ li h2{
 }
 
 li p{
-    font-size: 18px;
+    
+    font-size: 20px;
+    font-weight: 600;
 }
 
 footer{

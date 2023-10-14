@@ -1,18 +1,20 @@
-import { type, toFrom, details, amount, ul } from "../app.js";
+import { Payment } from "../classes/payment.js";
+import { Invoice } from "../classes/invoice.js";
+import { ListTemplate } from "../classes/Template.js";
+let type = document.querySelector('#type');
+let toFrom = document.querySelector('#tofrom');
+let details = document.querySelector('#details');
+let amount = document.querySelector('#amount');
+let ul = document.querySelector('ul');
+let list = new ListTemplate(ul);
 export let create = function (e) {
     e.preventDefault();
+    let doc;
     if (type.value === "Invoice") {
-        ul.innerHTML +=
-            `<li>
-            <h2>${type.value}</h2>
-            <p>${toFrom.value} owes ${amount.value} for ${details.value}</p>
-        </li>`;
+        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
     }
-    else if (type.value === "Payment") {
-        ul.innerHTML +=
-            `<li>
-        <h2>${type.value}</h2>
-        <p>${toFrom.value} is owed ${amount.value} for ${details.value}</p>
-    </li>`;
+    else {
+        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
     }
+    list.render(doc, type.value);
 };
